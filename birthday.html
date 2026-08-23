@@ -1,0 +1,2111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>For You | Akanksha</title>
+
+
+  <!-- =====================================================
+       GOOGLE FONTS
+       ===================================================== -->
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Dancing+Script:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap"
+    rel="stylesheet"
+  >
+
+
+  <style>
+
+    /* =====================================================
+       RESET
+       ===================================================== */
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+
+    body {
+
+      min-height: 100vh;
+
+      overflow-x: hidden;
+
+      color: #1b3347;
+
+      font-family:
+        "Poppins",
+        sans-serif;
+
+      background:
+
+        radial-gradient(
+          circle at 15% 15%,
+          rgba(255,255,255,0.95),
+          transparent 32%
+        ),
+
+        radial-gradient(
+          circle at 85% 75%,
+          rgba(120,157,180,0.13),
+          transparent 35%
+        ),
+
+        linear-gradient(
+          135deg,
+          #edf5f9,
+          #d9e7f0 50%,
+          #eef5f8
+        );
+    }
+
+
+    /* =====================================================
+       BACKGROUND
+       ===================================================== */
+
+    .background {
+
+      position: fixed;
+
+      inset: 0;
+
+      z-index: 0;
+
+      pointer-events: none;
+
+      overflow: hidden;
+    }
+
+
+    .background::before {
+
+      content: "";
+
+      position: absolute;
+
+      width: 500px;
+
+      height: 500px;
+
+      top: -230px;
+
+      left: -180px;
+
+      border-radius: 50%;
+
+      background:
+        rgba(73,116,143,0.09);
+
+      filter:
+        blur(70px);
+    }
+
+
+    .background::after {
+
+      content: "";
+
+      position: absolute;
+
+      width: 500px;
+
+      height: 500px;
+
+      right: -220px;
+
+      bottom: -250px;
+
+      border-radius: 50%;
+
+      background:
+        rgba(166,187,201,0.18);
+
+      filter:
+        blur(70px);
+    }
+
+
+    /* =====================================================
+       FLOATING DECORATIONS
+       ===================================================== */
+
+    .particle {
+
+      position: fixed;
+
+      z-index: 1;
+
+      pointer-events: none;
+
+      color:
+        rgba(61,96,119,0.25);
+
+      font-family:
+        "Cormorant Garamond",
+        serif;
+
+      animation:
+        floatParticle
+        8s
+        ease-in-out
+        infinite;
+    }
+
+
+    .p1 {
+      top: 18%;
+      left: 8%;
+      font-size: 25px;
+    }
+
+
+    .p2 {
+      top: 35%;
+      right: 10%;
+      font-size: 18px;
+      animation-delay: 2s;
+    }
+
+
+    .p3 {
+      bottom: 20%;
+      left: 13%;
+      font-size: 16px;
+      animation-delay: 4s;
+    }
+
+
+    .p4 {
+      top: 65%;
+      right: 17%;
+      font-size: 24px;
+      animation-delay: 1s;
+    }
+
+
+    @keyframes floatParticle {
+
+      0%,
+      100% {
+
+        transform:
+          translateY(0)
+          rotate(0deg);
+
+        opacity: .35;
+      }
+
+      50% {
+
+        transform:
+          translateY(-18px)
+          rotate(10deg);
+
+        opacity: .75;
+      }
+
+    }
+
+
+    /* =====================================================
+       MAIN PAGE
+       ===================================================== */
+
+    .page {
+
+      position: relative;
+
+      z-index: 5;
+
+      width: 100%;
+
+      min-height: 100vh;
+
+      padding:
+        70px
+        20px
+        35px;
+
+      display: flex;
+
+      flex-direction: column;
+
+      align-items: center;
+    }
+
+
+    /* =====================================================
+       INTRO
+       ===================================================== */
+
+    .intro {
+
+      width:
+        min(
+          900px,
+          100%
+        );
+
+      text-align: center;
+
+      margin-bottom: 50px;
+
+      animation:
+        fadeUp
+        1s
+        ease
+        both;
+    }
+
+
+    .script-title {
+
+      font-family:
+        "Dancing Script",
+        cursive;
+
+      font-size: 27px;
+
+      color: #547892;
+
+      margin-bottom: 5px;
+    }
+
+
+    .intro h1 {
+
+      font-family:
+        "Cormorant Garamond",
+        serif;
+
+      font-weight: 500;
+
+      font-size:
+        clamp(
+          58px,
+          8vw,
+          94px
+        );
+
+      line-height: .9;
+
+      letter-spacing: -2px;
+
+      color: #183248;
+
+      margin-bottom: 20px;
+    }
+
+
+    .intro h1 span {
+
+      color: #557f99;
+    }
+
+
+    .intro p {
+
+      width:
+        min(
+          620px,
+          100%
+        );
+
+      margin:
+        0 auto;
+
+      color: #607786;
+
+      font-size: 13px;
+
+      line-height: 1.9;
+    }
+
+
+    .intro-line {
+
+      width: 70px;
+
+      height: 1px;
+
+      margin:
+        22px auto 0;
+
+      background:
+        linear-gradient(
+          90deg,
+          transparent,
+          #7896aa,
+          transparent
+        );
+    }
+
+
+    /* =====================================================
+       LETTER CARDS
+       ===================================================== */
+
+    .letter-choice-container {
+
+      width:
+        min(
+          1000px,
+          100%
+        );
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(2, 1fr);
+
+      gap: 28px;
+
+      animation:
+        fadeUp
+        1s
+        .15s
+        ease
+        both;
+    }
+
+
+    .letter-choice {
+
+      position: relative;
+
+      min-height: 420px;
+
+      padding:
+        32px
+        38px
+        38px;
+
+      border-radius: 6px;
+
+      cursor: pointer;
+
+      overflow: hidden;
+
+      display: flex;
+
+      flex-direction: column;
+
+      align-items: center;
+
+      justify-content: flex-start;
+
+      text-align: center;
+
+      background:
+
+        linear-gradient(
+          145deg,
+          rgba(255,255,255,.88),
+          rgba(239,246,250,.78)
+        );
+
+      border:
+        1px solid
+        rgba(255,255,255,.95);
+
+      box-shadow:
+
+        0 20px 45px
+        rgba(37,63,80,.10),
+
+        inset
+        0 1px 0
+        rgba(255,255,255,.9);
+
+      backdrop-filter:
+        blur(18px);
+
+      -webkit-backdrop-filter:
+        blur(18px);
+
+      transition:
+        transform .5s
+        cubic-bezier(.2,.8,.2,1),
+
+        box-shadow .5s ease,
+
+        border-color .5s ease;
+    }
+
+
+    /* Inner border */
+
+    .letter-choice::before {
+
+      content: "";
+
+      position: absolute;
+
+      inset: 10px;
+
+      border:
+        1px solid
+        rgba(74,109,129,.10);
+
+      pointer-events: none;
+
+      transition:
+        border-color .4s ease;
+    }
+
+
+    /* Decorative shine */
+
+    .letter-choice::after {
+
+      content: "";
+
+      position: absolute;
+
+      width: 180px;
+
+      height: 180px;
+
+      top: -100px;
+
+      right: -80px;
+
+      border-radius: 50%;
+
+      background:
+        rgba(255,255,255,.55);
+
+      filter:
+        blur(10px);
+
+      transition:
+        transform .6s ease;
+    }
+
+
+    .letter-choice:hover {
+
+      transform:
+        translateY(-12px);
+
+      box-shadow:
+
+        0 30px 60px
+        rgba(34,61,80,.16),
+
+        0 0 0 1px
+        rgba(80,119,143,.08);
+    }
+
+
+    .letter-choice:hover::before {
+
+      border-color:
+        rgba(70,108,130,.20);
+    }
+
+
+    .letter-choice:hover::after {
+
+      transform:
+        scale(1.5);
+    }
+
+
+    /* =====================================================
+       CARD HEADING
+       ===================================================== */
+
+    .card-heading {
+
+      position: relative;
+
+      z-index: 5;
+
+      width: 100%;
+
+      margin-bottom: 20px;
+    }
+
+
+    .card-heading h2 {
+
+      font-family:
+        "Cormorant Garamond",
+        serif;
+
+      font-size: 36px;
+
+      font-weight: 600;
+
+      line-height: 1.05;
+
+      color:
+        #1b3448;
+    }
+
+
+    /* =====================================================
+       FULL RECTANGULAR PHOTO
+       ===================================================== */
+
+    .photo-frame {
+
+      position: relative;
+
+      z-index: 5;
+
+      width: 100%;
+
+      height: 190px;
+
+      overflow: hidden;
+
+      border-radius: 5px;
+
+      margin-bottom: 21px;
+
+      background:
+        #ffffff;
+
+      border:
+        1px solid
+        rgba(255,255,255,.95);
+
+      box-shadow:
+
+        0 10px 25px
+        rgba(42,76,98,.15);
+
+      transition:
+        transform .45s ease,
+        box-shadow .45s ease;
+    }
+
+
+    .photo-frame img {
+
+      width: 100%;
+
+      height: 100%;
+
+      display: block;
+
+      object-fit: cover;
+
+      transition:
+        transform .6s ease;
+    }
+
+
+    .letter-choice:hover
+    .photo-frame {
+
+      transform:
+        translateY(-3px);
+
+      box-shadow:
+
+        0 16px 32px
+        rgba(42,76,98,.22);
+    }
+
+
+    .letter-choice:hover
+    .photo-frame img {
+
+      transform:
+        scale(1.05);
+    }
+
+
+    /* =====================================================
+       CARD DESCRIPTION
+       ===================================================== */
+
+    .card-description {
+
+      position: relative;
+
+      z-index: 5;
+
+      width: 100%;
+    }
+
+
+    .card-description p {
+
+      width:
+        min(
+          380px,
+          100%
+        );
+
+      margin:
+        0 auto;
+
+      color:
+        #647b89;
+
+      font-size: 12px;
+
+      line-height: 1.8;
+    }
+
+
+    /* =====================================================
+       OPEN BUTTON
+       ===================================================== */
+
+    .open-text {
+
+      position: relative;
+
+      z-index: 5;
+
+      display: inline-flex;
+
+      margin-top: 20px;
+
+      padding:
+        9px
+        17px;
+
+      border-radius: 30px;
+
+      color:
+        #466a81;
+
+      background:
+        rgba(255,255,255,.70);
+
+      border:
+        1px solid
+        rgba(67,101,120,.10);
+
+      font-size: 9px;
+
+      letter-spacing: 1.8px;
+
+      text-transform: uppercase;
+
+      transition:
+        all .3s ease;
+    }
+
+
+    .letter-choice:hover
+    .open-text {
+
+      color: white;
+
+      background:
+        #315c78;
+
+      transform:
+        translateY(-2px);
+    }
+
+
+    /* =====================================================
+       LETTER VIEW
+       ===================================================== */
+
+    .letter-view {
+
+      display: none;
+
+      width:
+        min(
+          850px,
+          100%
+        );
+
+      animation:
+        letterOpen
+        .8s
+        ease
+        both;
+    }
+
+
+    .letter-view.active {
+
+      display: block;
+    }
+
+
+    /* =====================================================
+       LETTER PAPER
+       ===================================================== */
+
+    .letter-paper {
+
+      position: relative;
+
+      padding:
+        65px
+        70px;
+
+      overflow: hidden;
+
+      background:
+
+        linear-gradient(
+          135deg,
+          rgba(255,255,255,.90),
+          rgba(239,246,250,.88)
+        );
+
+      border-radius: 5px;
+
+      border:
+        1px solid
+        rgba(255,255,255,.95);
+
+      box-shadow:
+
+        0 30px 70px
+        rgba(31,57,74,.14),
+
+        inset
+        0 1px 0
+        rgba(255,255,255,.9);
+    }
+
+
+    .letter-paper::before {
+
+      content: "";
+
+      position: absolute;
+
+      inset: 14px;
+
+      border:
+        1px solid
+        rgba(72,108,128,.10);
+
+      pointer-events: none;
+    }
+
+
+    .paper-decoration {
+
+      position: absolute;
+
+      top: 25px;
+
+      right: 35px;
+
+      color:
+        rgba(73,110,132,.35);
+
+      font-size: 22px;
+    }
+
+
+    /* =====================================================
+       LETTER HEADER
+       ===================================================== */
+
+    .letter-label {
+
+      position: relative;
+
+      font-family:
+        "Dancing Script",
+        cursive;
+
+      color:
+        #5b7e94;
+
+      font-size: 25px;
+
+      margin-bottom: 7px;
+    }
+
+
+    .letter-paper h2 {
+
+      position: relative;
+
+      font-family:
+        "Cormorant Garamond",
+        serif;
+
+      font-size: 52px;
+
+      font-weight: 500;
+
+      color:
+        #183248;
+
+      margin-bottom: 32px;
+    }
+
+
+    /* =====================================================
+       LETTER CONTENT
+       ===================================================== */
+
+    .letter-content {
+
+      position: relative;
+
+      color:
+        #435d6c;
+
+      font-size: 14px;
+
+      line-height: 2;
+    }
+
+
+    .letter-content p {
+
+      margin-bottom: 23px;
+    }
+
+
+    .letter-content .highlight {
+
+      margin:
+        35px 0;
+
+      padding:
+        18px
+        25px;
+
+      border-left:
+        2px solid
+        #66879c;
+
+      background:
+        rgba(221,233,241,.38);
+
+      font-family:
+        "Dancing Script",
+        cursive;
+
+      font-size: 25px;
+
+      line-height: 1.5;
+
+      color:
+        #456b82;
+    }
+
+
+    /* =====================================================
+       SIGNATURE
+       ===================================================== */
+
+    .signature {
+
+      margin-top: 40px;
+
+      font-family:
+        "Dancing Script",
+        cursive;
+
+      font-size: 34px;
+
+      color:
+        #345d77;
+    }
+
+
+    .signature-small {
+
+      margin-top: 3px;
+
+      color:
+        #7a8e99;
+
+      font-size: 10px;
+    }
+
+
+    /* =====================================================
+       BACK BUTTON
+       ===================================================== */
+
+    .back-button {
+
+      display: flex;
+
+      margin:
+        28px auto 0;
+
+      padding:
+        11px
+        20px;
+
+      border:
+        1px solid
+        rgba(59,93,112,.15);
+
+      border-radius: 30px;
+
+      background:
+        rgba(255,255,255,.75);
+
+      color:
+        #35566e;
+
+      font-family:
+        "Poppins",
+        sans-serif;
+
+      font-size: 10px;
+
+      cursor: pointer;
+
+      transition:
+        all .3s ease;
+    }
+
+
+    .back-button:hover {
+
+      color:
+        white;
+
+      background:
+        #315c78;
+
+      transform:
+        translateY(-3px);
+
+      box-shadow:
+        0 10px 20px
+        rgba(40,70,88,.18);
+    }
+
+
+    /* =====================================================
+       BOTTOM NAVIGATION
+       ===================================================== */
+
+    .bottom-navigation {
+
+      width: 100%;
+
+      margin-top: 55px;
+
+      display: flex;
+
+      justify-content: center;
+
+      align-items: center;
+
+      flex-wrap: wrap;
+
+      gap: 9px;
+    }
+
+
+    .bottom-navigation a {
+
+      padding:
+        10px
+        17px;
+
+      border-radius: 30px;
+
+      text-decoration: none;
+
+      color:
+        #46687d;
+
+      background:
+        rgba(255,255,255,.62);
+
+      border:
+        1px solid
+        rgba(62,96,115,.10);
+
+      font-size: 11px;
+
+      transition:
+        all .3s ease;
+    }
+
+
+    .bottom-navigation a:hover {
+
+      color:
+        white;
+
+      background:
+        #315c78;
+
+      transform:
+        translateY(-3px);
+    }
+
+
+    .bottom-navigation a.active {
+
+      color:
+        white;
+
+      background:
+        linear-gradient(
+          135deg,
+          #193449,
+          #416c88
+        );
+
+      box-shadow:
+        0 8px 20px
+        rgba(28,57,75,.18);
+    }
+
+
+    /* =====================================================
+       MUSIC BUTTON
+       ===================================================== */
+
+    .music-button {
+
+      position: fixed;
+
+      right: 28px;
+
+      bottom: 28px;
+
+      width: 54px;
+
+      height: 54px;
+
+      border: none;
+
+      border-radius: 50%;
+
+      background:
+        linear-gradient(
+          135deg,
+          #193449,
+          #416c88
+        );
+
+      color:
+        white;
+
+      font-size: 17px;
+
+      cursor: pointer;
+
+      z-index: 100;
+
+      box-shadow:
+        0 12px 28px
+        rgba(25,52,73,.25);
+    }
+
+
+    /* =====================================================
+       ANIMATIONS
+       ===================================================== */
+
+    @keyframes fadeUp {
+
+      from {
+
+        opacity: 0;
+
+        transform:
+          translateY(25px);
+      }
+
+      to {
+
+        opacity: 1;
+
+        transform:
+          translateY(0);
+      }
+    }
+
+
+    @keyframes letterOpen {
+
+      from {
+
+        opacity: 0;
+
+        transform:
+          translateY(30px)
+          scale(.98);
+      }
+
+      to {
+
+        opacity: 1;
+
+        transform:
+          translateY(0)
+          scale(1);
+      }
+    }
+
+
+    /* =====================================================
+       TABLET
+       ===================================================== */
+
+    @media (max-width: 850px) {
+
+      .letter-choice-container {
+
+        grid-template-columns:
+          1fr 1fr;
+
+        gap: 18px;
+      }
+
+
+      .letter-choice {
+
+        padding:
+          30px
+          20px
+          35px;
+      }
+
+
+      .card-heading h2 {
+
+        font-size:
+          31px;
+      }
+
+
+      .photo-frame {
+
+        height:
+          170px;
+      }
+
+    }
+
+
+    /* =====================================================
+       MOBILE
+       ===================================================== */
+
+    @media (max-width: 700px) {
+
+      .page {
+
+        padding:
+          45px
+          15px
+          25px;
+      }
+
+
+      .script-title {
+
+        font-size:
+          22px;
+      }
+
+
+      .intro h1 {
+
+        font-size:
+          56px;
+
+        letter-spacing:
+          -1px;
+      }
+
+
+      .intro p {
+
+        font-size:
+          12px;
+      }
+
+
+      .letter-choice-container {
+
+        grid-template-columns:
+          1fr;
+
+        gap:
+          18px;
+      }
+
+
+      .letter-choice {
+
+        min-height:
+          390px;
+
+        padding:
+          28px
+          25px
+          35px;
+      }
+
+
+      .card-heading h2 {
+
+        font-size:
+          32px;
+      }
+
+
+      .photo-frame {
+
+        height:
+          180px;
+
+        margin-bottom:
+          20px;
+      }
+
+
+      .letter-paper {
+
+        padding:
+          45px
+          27px;
+      }
+
+
+      .letter-paper h2 {
+
+        font-size:
+          42px;
+      }
+
+
+      .letter-content {
+
+        font-size:
+          13px;
+
+        line-height:
+          1.9;
+      }
+
+
+      .letter-content .highlight {
+
+        font-size:
+          22px;
+
+        padding:
+          15px
+          18px;
+      }
+
+
+      .bottom-navigation {
+
+        gap:
+          6px;
+
+        margin-top:
+          35px;
+      }
+
+
+      .bottom-navigation a {
+
+        padding:
+          9px
+          12px;
+
+        font-size:
+          10px;
+      }
+
+
+      .music-button {
+
+        width:
+          48px;
+
+        height:
+          48px;
+
+        right:
+          17px;
+
+        bottom:
+          17px;
+      }
+
+    }
+
+
+    /* =====================================================
+       SMALL PHONE
+       ===================================================== */
+
+    @media (max-width: 400px) {
+
+      .intro h1 {
+
+        font-size:
+          48px;
+      }
+
+
+      .card-heading h2 {
+
+        font-size:
+          29px;
+      }
+
+
+      .photo-frame {
+
+        height:
+          165px;
+      }
+
+
+      .letter-paper {
+
+        padding:
+          38px
+          20px;
+      }
+
+
+      .letter-paper h2 {
+
+        font-size:
+          36px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+  <!-- =====================================================
+       BACKGROUND
+       ===================================================== -->
+
+  <div class="background"></div>
+
+
+  <div class="particle p1">
+    ✦
+  </div>
+
+  <div class="particle p2">
+    ◇
+  </div>
+
+  <div class="particle p3">
+    ✦
+  </div>
+
+  <div class="particle p4">
+    ♡
+  </div>
+
+
+  <!-- =====================================================
+       MAIN PAGE
+       ===================================================== -->
+
+  <main class="page">
+
+
+    <!-- ===================================================
+         INTRO
+         =================================================== -->
+
+    <section
+      class="intro"
+      id="intro"
+    >
+
+      <div class="script-title">
+        a little something from my heart
+      </div>
+
+
+      <h1>
+        Two Letters,
+        <span>One Heart</span>
+      </h1>
+
+
+      <p>
+        Some words are meant to be read at different
+        moments in life. Choose the one that feels
+        like your story.
+      </p>
+
+
+      <div class="intro-line"></div>
+
+    </section>
+
+
+    <!-- ===================================================
+         TWO LETTER CARDS
+         =================================================== -->
+
+    <section
+      class="letter-choice-container"
+      id="letterChoices"
+    >
+
+
+      <!-- =================================================
+           DATING CARD
+           ================================================= -->
+
+      <article
+        class="letter-choice dating-card"
+        onclick="openLetter('dating')"
+      >
+
+
+        <!-- HEADING ABOVE PHOTO -->
+
+        <div class="card-heading">
+
+          <h2>
+            Open if we're dating
+          </h2>
+
+        </div>
+
+
+        <!-- FULL RECTANGULAR PHOTO -->
+
+        <div class="photo-frame">
+
+          <img
+            src="assets/dating.jpg"
+            alt="Our memory"
+          >
+
+        </div>
+
+
+        <!-- DESCRIPTION -->
+
+        <div class="card-description">
+
+          <p>
+            For the version of us that chose each other
+            and is still writing our story together.
+          </p>
+
+
+          <div class="open-text">
+            Open this letter&nbsp; ✦
+          </div>
+
+        </div>
+
+
+      </article>
+
+
+      <!-- =================================================
+           BREAKUP CARD
+           ================================================= -->
+
+      <article
+        class="letter-choice breakup-card"
+        onclick="openLetter('breakup')"
+      >
+
+
+        <!-- HEADING ABOVE PHOTO -->
+
+        <div class="card-heading">
+
+          <h2>
+            Open if we have broken up
+          </h2>
+
+        </div>
+
+
+        <!-- FULL RECTANGULAR PHOTO -->
+
+        <div class="photo-frame">
+
+          <img
+            src="assets/breakup.jpg"
+            alt="A memory"
+          >
+
+        </div>
+
+
+        <!-- DESCRIPTION -->
+
+        <div class="card-description">
+
+          <p>
+            For the version of our story where life
+            decided to take us down different paths.
+          </p>
+
+
+          <div class="open-text">
+            Open this letter&nbsp; ✦
+          </div>
+
+        </div>
+
+
+      </article>
+
+
+    </section>
+
+
+    <!-- ===================================================
+         DATING LETTER
+         =================================================== -->
+
+    <section
+      class="letter-view"
+      id="datingLetter"
+    >
+
+      <div class="letter-paper">
+
+
+        <div class="paper-decoration">
+          ✦
+        </div>
+
+
+        <div class="letter-label">
+          if we're still together...
+        </div>
+
+
+        <h2>
+          My Love,
+        </h2>
+
+
+        <div class="letter-content">
+
+
+          <p>
+            If you're reading this while we're still
+            together, then there's one thing I want
+            you to know first — I'm really glad
+            it's still us.
+          </p>
+
+
+          <p>
+            Somewhere between all the random
+            conversations, silly moments, little
+            arguments, laughter, and memories,
+            you became someone incredibly important
+            to me.
+          </p>
+
+
+          <p>
+            I don't want to take that for granted.
+            I don't want to assume that just because
+            you're here today, you'll always know
+            how much you mean to me.
+          </p>
+
+
+          <p class="highlight">
+            So let me say it clearly:
+            I choose you.
+            And I hope I keep choosing you,
+            again and again.
+          </p>
+
+
+          <p>
+            I hope we continue making memories
+            that we'll laugh about years from now.
+            I hope we continue annoying each other,
+            supporting each other, celebrating
+            each other's wins and being there
+            through the difficult days too.
+          </p>
+
+
+          <p>
+            I don't expect everything between us
+            to always be perfect. Real relationships
+            aren't perfect. But I hope we're always
+            honest enough to talk, strong enough
+            to stay, and kind enough to understand
+            each other.
+          </p>
+
+
+          <p>
+            And if one day you look back at this
+            little birthday website, I hope you
+            remember how much love was behind it.
+          </p>
+
+
+          <p>
+            Thank you for being you.
+            Thank you for being part of my life.
+            And thank you for giving me so many
+            reasons to smile.
+          </p>
+
+
+          <p class="highlight">
+            If we're still together,
+            then I hope this isn't the end
+            of our story.
+
+            I hope it's just another beautiful
+            chapter.
+          </p>
+
+
+          <p>
+            Happy Birthday, beautiful.
+            Here's to us, to everything we've
+            already lived, and to everything
+            that's still waiting for us.
+          </p>
+
+
+          <div class="signature">
+            Always yours ♡
+          </div>
+
+
+          <div class="signature-small">
+            With all my heart
+          </div>
+
+
+        </div>
+
+      </div>
+
+
+      <button
+        class="back-button"
+        onclick="showChoices()"
+      >
+        ← Back to the letters
+      </button>
+
+    </section>
+
+
+    <!-- ===================================================
+         BREAKUP LETTER
+         =================================================== -->
+
+    <section
+      class="letter-view"
+      id="breakupLetter"
+    >
+
+      <div class="letter-paper">
+
+
+        <div class="paper-decoration">
+          ✦
+        </div>
+
+
+        <div class="letter-label">
+          if life took us separate ways...
+        </div>
+
+
+        <h2>
+          Dear You,
+        </h2>
+
+
+        <div class="letter-content">
+
+
+          <p>
+            If you're reading this because we're no
+            longer together, then I know this letter
+            probably feels different from the one
+            you might have expected to find here.
+          </p>
+
+
+          <p>
+            But I still wanted to leave these words
+            for you because what we had mattered.
+            Whatever happened between us, whatever
+            changed, and wherever life takes us
+            from here — our memories were real.
+          </p>
+
+
+          <p class="highlight">
+            Some people stay forever.
+            Some people become memories.
+
+            And sometimes, a person can be important
+            even when they aren't part of your life
+            anymore.
+          </p>
+
+
+          <p>
+            I don't want to remember us only for
+            the ending. I want to remember the
+            laughter, the silly conversations,
+            the little moments, the photographs,
+            the days when everything felt right,
+            and all the things we once dreamed about.
+          </p>
+
+
+          <p>
+            If I ever hurt you, I'm sorry.
+            If there were things I should have
+            understood sooner, I'm sorry for those
+            too. We were both learning, growing,
+            and trying to figure things out.
+          </p>
+
+
+          <p>
+            I don't know what the future looks like
+            for either of us now. Maybe our paths
+            will cross again. Maybe they won't.
+            And I think it's okay not to know.
+          </p>
+
+
+          <p>
+            What I do know is that I genuinely hope
+            life is kind to you. I hope you laugh
+            a lot. I hope you find people who
+            appreciate your heart. I hope you
+            achieve the things you once told me about.
+          </p>
+
+
+          <p class="highlight">
+            And wherever you are,
+            I hope you're happy.
+
+            Truly happy.
+          </p>
+
+
+          <p>
+            So if this birthday finds you reading
+            these words, please remember one thing:
+            you were loved. You are worthy of love.
+            And you will always have been an important
+            chapter of my life.
+          </p>
+
+
+          <p>
+            Thank you for the memories.
+            Thank you for the lessons.
+            Thank you for being part of my story.
+          </p>
+
+
+          <p>
+            Happy Birthday, Akanksha.
+            I hope the life ahead of you
+            is beautiful.
+          </p>
+
+
+          <div class="signature">
+            Take care, always ♡
+          </div>
+
+
+          <div class="signature-small">
+            With nothing but good wishes
+          </div>
+
+
+        </div>
+
+      </div>
+
+
+      <button
+        class="back-button"
+        onclick="showChoices()"
+      >
+        ← Back to the letters
+      </button>
+
+    </section>
+
+
+    <!-- ===================================================
+         BOTTOM NAVIGATION
+         =================================================== -->
+
+    <nav
+      class="bottom-navigation"
+      id="bottomNavigation"
+    >
+
+      <a href="index.html">
+        Home
+      </a>
+
+
+      <a href="memories.html">
+        Memories
+      </a>
+
+
+      <a href="reasons.html">
+        Reasons
+      </a>
+
+
+      <a href="letter.html">
+        Letter
+      </a>
+
+
+
+
+
+      <a
+        href="birthday.html"
+        class="active"
+      >
+        Birthday
+      </a>
+
+    </nav>
+
+
+  </main>
+
+
+  <!-- =====================================================
+       MUSIC BUTTON
+       ===================================================== -->
+
+  <button
+    class="music-button"
+    id="musicButton"
+  >
+    ♪
+  </button>
+
+
+  <!-- =====================================================
+       JAVASCRIPT
+       ===================================================== -->
+
+  <script>
+
+
+    /* =====================================================
+       ELEMENTS
+       ===================================================== */
+
+    const intro =
+      document.getElementById(
+        "intro"
+      );
+
+
+    const letterChoices =
+      document.getElementById(
+        "letterChoices"
+      );
+
+
+    const datingLetter =
+      document.getElementById(
+        "datingLetter"
+      );
+
+
+    const breakupLetter =
+      document.getElementById(
+        "breakupLetter"
+      );
+
+
+    const bottomNavigation =
+      document.getElementById(
+        "bottomNavigation"
+      );
+
+
+    /* =====================================================
+       OPEN LETTER
+       ===================================================== */
+
+    function openLetter(type) {
+
+      letterChoices.style.display =
+        "none";
+
+
+      intro.style.display =
+        "none";
+
+
+      bottomNavigation.style.display =
+        "none";
+
+
+      datingLetter.classList.remove(
+        "active"
+      );
+
+
+      breakupLetter.classList.remove(
+        "active"
+      );
+
+
+      if (type === "dating") {
+
+        datingLetter.classList.add(
+          "active"
+        );
+
+      }
+
+
+      if (type === "breakup") {
+
+        breakupLetter.classList.add(
+          "active"
+        );
+
+      }
+
+
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+
+    }
+
+
+    /* =====================================================
+       BACK TO LETTER CHOICES
+       ===================================================== */
+
+    function showChoices() {
+
+      datingLetter.classList.remove(
+        "active"
+      );
+
+
+      breakupLetter.classList.remove(
+        "active"
+      );
+
+
+      intro.style.display =
+        "block";
+
+
+      letterChoices.style.display =
+        "grid";
+
+
+      bottomNavigation.style.display =
+        "flex";
+
+
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+
+    }
+
+
+    /* =====================================================
+       MUSIC BUTTON
+       ===================================================== */
+
+    const musicButton =
+      document.getElementById(
+        "musicButton"
+      );
+
+
+    let musicPlaying = false;
+
+
+    musicButton.addEventListener(
+      "click",
+      function () {
+
+        musicPlaying =
+          !musicPlaying;
+
+
+        musicButton.innerHTML =
+          musicPlaying
+            ? "❚❚"
+            : "♪";
+
+      }
+    );
+
+
+  </script>
+
+
+</body>
+
+</html>

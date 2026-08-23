@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Happy Birthday Akanksha</title>
+
+  <!-- =====================================================
+       GOOGLE FONTS
+       ===================================================== -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Dancing+Script:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Existing CSS -->
+  <link rel="stylesheet" href="style.css" />
+
+
+  <!-- =====================================================
+       CUSTOM CSS
+       ===================================================== -->
+
+  <style>
+
+    /* =====================================================
+       BASIC RESET
+       ===================================================== */
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      min-height: 100%;
+    }
+
+    body {
+      overflow-x: hidden;
+    }
+
+
+    /* =====================================================
+       HERO SECTION
+       ===================================================== */
+
+    .hero {
+      min-height: auto !important;
+
+      padding-top: 75px !important;
+      padding-bottom: 35px !important;
+
+      box-sizing: border-box;
+
+      position: relative;
+    }
+
+
+    /* =====================================================
+       BLUE / CREAM BACKGROUND
+       ===================================================== */
+
+    .hero-overlay {
+      background:
+        linear-gradient(
+          90deg,
+          rgba(242, 246, 250, 0.94) 0%,
+          rgba(235, 242, 248, 0.82) 42%,
+          rgba(218, 230, 241, 0.68) 100%
+        ) !important;
+    }
+
+
+    /* =====================================================
+       HERO CONTENT
+       ===================================================== */
+
+    .hero-content {
+      position: relative;
+      z-index: 5;
+
+      padding-top: 10px;
+    }
+
+
+    .hero-content .script-text {
+      color: #55758f !important;
+
+      font-size: 25px;
+
+      margin-bottom: 12px;
+
+      text-shadow:
+        0 2px 10px rgba(255, 255, 255, 0.8);
+    }
+
+
+    .hero-content h1 {
+      color: #172b3d !important;
+
+      margin-top: 5px;
+      margin-bottom: 20px;
+
+      letter-spacing: -2px;
+
+      line-height: 0.9;
+
+      text-shadow:
+        0 4px 15px rgba(255, 255, 255, 0.8);
+    }
+
+
+    .hero-content h1 span {
+      color: #416b89 !important;
+    }
+
+
+    .hero-desc {
+      max-width: 620px;
+
+      color: #34495a !important;
+
+      font-size: 17px;
+
+      line-height: 1.8;
+
+      text-shadow:
+        0 2px 8px rgba(255, 255, 255, 0.75);
+    }
+
+
+    /* =====================================================
+       MAIN BUTTONS
+       ===================================================== */
+
+    .hero-actions .btn.primary {
+      background:
+        linear-gradient(
+          135deg,
+          #172b3d,
+          #315a78
+        ) !important;
+
+      color: #fff !important;
+
+      border: none !important;
+
+      box-shadow:
+        0 10px 25px rgba(23, 43, 61, 0.25);
+
+      transition: all 0.3s ease;
+    }
+
+
+    .hero-actions .btn.primary:hover {
+      background:
+        linear-gradient(
+          135deg,
+          #0f2233,
+          #264d6a
+        ) !important;
+
+      transform: translateY(-3px);
+
+      box-shadow:
+        0 15px 30px rgba(23, 43, 61, 0.30);
+    }
+
+
+    .hero-actions .btn.ghost {
+      color: #29485f !important;
+
+      background:
+        rgba(255, 255, 255, 0.58) !important;
+
+      border:
+        1px solid rgba(55, 88, 112, 0.25) !important;
+
+      backdrop-filter: blur(10px);
+
+      -webkit-backdrop-filter: blur(10px);
+
+      transition: all 0.3s ease;
+    }
+
+
+    .hero-actions .btn.ghost:hover {
+      background:
+        rgba(255, 255, 255, 0.88) !important;
+
+      color: #172b3d !important;
+
+      transform: translateY(-3px);
+    }
+
+
+    /* =====================================================
+       COUNTDOWN CARD
+       ===================================================== */
+
+    .countdown-card {
+      position: relative;
+
+      z-index: 5;
+
+      transform: translateY(0) !important;
+
+      text-align: center;
+
+      padding: 28px 28px 30px;
+
+      margin-top: 15px;
+
+      min-height: auto;
+
+      display: flex;
+
+      flex-direction: column;
+
+      align-items: center;
+
+      box-sizing: border-box;
+
+      overflow: visible !important;
+
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(255, 255, 255, 0.80),
+          rgba(225, 236, 246, 0.64)
+        ) !important;
+
+
+      border:
+        1px solid rgba(255, 255, 255, 0.92) !important;
+
+
+      border-radius: 32px !important;
+
+
+      box-shadow:
+        0 25px 60px rgba(31, 61, 82, 0.18),
+        inset 0 1px 0 rgba(255, 255, 255, 0.92) !important;
+
+
+      backdrop-filter: blur(18px);
+
+      -webkit-backdrop-filter: blur(18px);
+    }
+
+
+    /* =====================================================
+       BLUE GLOW BEHIND COUNTDOWN
+       ===================================================== */
+
+    .countdown-card::before {
+      content: "";
+
+      position: absolute;
+
+      width: 220px;
+      height: 220px;
+
+      background:
+        rgba(90, 139, 174, 0.22);
+
+      filter: blur(75px);
+
+      border-radius: 50%;
+
+      top: 20%;
+      left: 50%;
+
+      transform: translate(-50%, -50%);
+
+      z-index: -1;
+    }
+
+
+    /* =====================================================
+       COUNTDOWN TITLE
+       ===================================================== */
+
+    .countdown-card .script-text {
+      color: #466f8c !important;
+
+      font-size: 26px;
+
+      margin-top: 0;
+
+      margin-bottom: 18px;
+
+      text-shadow:
+        0 2px 8px rgba(255, 255, 255, 0.85);
+    }
+
+
+    /* =====================================================
+       COUNTDOWN BOXES
+       ===================================================== */
+
+    .countdown {
+      margin-bottom: 5px;
+    }
+
+
+    .countdown > div {
+      background:
+        linear-gradient(
+          145deg,
+          rgba(255, 255, 255, 0.90),
+          rgba(235, 242, 248, 0.74)
+        ) !important;
+
+      border:
+        1px solid rgba(255, 255, 255, 0.96);
+
+      border-radius: 20px !important;
+
+      box-shadow:
+        0 8px 20px rgba(38, 67, 88, 0.09);
+
+      transition: all 0.3s ease;
+    }
+
+
+    .countdown > div:hover {
+      transform: translateY(-5px);
+
+      box-shadow:
+        0 14px 28px rgba(38, 67, 88, 0.16);
+    }
+
+
+    .countdown strong {
+      color: #1c3448 !important;
+
+      font-family:
+        "Cormorant Garamond",
+        serif;
+
+      font-weight: 600;
+    }
+
+
+    .countdown span {
+      color: #5c7890 !important;
+    }
+
+
+    /* =====================================================
+       POLAROID PHOTO FRAME
+       ===================================================== */
+
+    .birthday-photo-frame {
+      position: relative;
+
+      margin: 24px auto 0;
+
+      width: 235px;
+
+      padding:
+        10px
+        10px
+        22px;
+
+      background: #fff !important;
+
+      border-radius: 7px !important;
+
+      box-shadow:
+        0 20px 45px rgba(32, 55, 72, 0.22),
+        0 5px 12px rgba(32, 55, 72, 0.12) !important;
+
+      transform: rotate(-2deg);
+
+      transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+    }
+
+
+    .birthday-photo-frame:hover {
+      transform:
+        rotate(0deg)
+        translateY(-5px);
+
+      box-shadow:
+        0 25px 45px rgba(32, 55, 72, 0.28),
+        0 8px 15px rgba(32, 55, 72, 0.15) !important;
+    }
+
+
+    .birthday-photo-frame img {
+      width: 100%;
+
+      height: 255px;
+
+      object-fit: cover;
+
+      display: block;
+
+      border-radius: 2px;
+    }
+
+
+    /* =====================================================
+       BLUE HEART ON PHOTO
+       ===================================================== */
+
+    .birthday-photo-frame::before {
+      content: "♥";
+
+      position: absolute;
+
+      top: -17px;
+      right: -13px;
+
+      width: 38px;
+      height: 38px;
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      font-size: 18px;
+
+      color: #fff;
+
+      background:
+        linear-gradient(
+          135deg,
+          #416b89,
+          #274c67
+        );
+
+      border-radius: 50%;
+
+      box-shadow:
+        0 8px 18px rgba(39, 76, 103, 0.28);
+
+      transform: rotate(12deg);
+
+      z-index: 5;
+    }
+
+
+    /* =====================================================
+       PHOTO CAPTION
+       ===================================================== */
+
+    .photo-caption {
+      margin:
+        12px
+        0
+        0;
+
+      font-family:
+        "Dancing Script",
+        cursive;
+
+      font-size: 21px;
+
+      font-weight: 600;
+
+      line-height: 1.1;
+
+      color: #354d5e !important;
+
+      text-shadow:
+        0 1px 3px rgba(0, 0, 0, 0.08);
+    }
+
+
+    /* =====================================================
+       DESKTOP LAYOUT
+       ===================================================== */
+
+    @media (min-width: 769px) {
+
+      .hero {
+        display: grid;
+
+        grid-template-columns:
+          minmax(0, 1.1fr)
+          minmax(370px, 0.9fr);
+
+        align-items: center;
+
+        gap: 55px;
+
+        padding-left: 8% !important;
+
+        padding-right: 8% !important;
+      }
+
+
+      .hero-content {
+        padding-top: 0;
+      }
+
+
+      .countdown-card {
+        margin-top: 0;
+
+        max-width: 430px;
+
+        width: 100%;
+
+        justify-self: center;
+      }
+    }
+
+
+    /* =====================================================
+       BOTTOM NAVIGATION
+       ===================================================== */
+
+    .bottom-navigation {
+      position: relative;
+
+      z-index: 100;
+
+      width: 100%;
+
+      display: flex;
+
+      justify-content: center;
+
+      align-items: center;
+
+      flex-wrap: wrap;
+
+      gap: 10px;
+
+      padding:
+        20px
+        20px
+        30px;
+
+      margin: 0;
+
+      box-sizing: border-box;
+
+
+      background:
+        linear-gradient(
+          180deg,
+          rgba(245, 248, 251, 0.55),
+          rgba(221, 233, 243, 0.84)
+        );
+
+
+      border-top:
+        1px solid rgba(255, 255, 255, 0.78);
+
+
+      box-shadow:
+        0 -10px 30px rgba(38, 67, 88, 0.07);
+    }
+
+
+    .bottom-navigation a {
+      display: inline-flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      text-decoration: none;
+
+      font-family:
+        "Poppins",
+        sans-serif;
+
+      font-size: 13px;
+
+      font-weight: 500;
+
+      color: #35566e !important;
+
+      background:
+        rgba(255, 255, 255, 0.68) !important;
+
+      border:
+        1px solid rgba(57, 91, 116, 0.16) !important;
+
+      padding:
+        10px
+        18px;
+
+      border-radius: 30px;
+
+      box-shadow:
+        0 6px 18px rgba(38, 67, 88, 0.08);
+
+      backdrop-filter: blur(12px);
+
+      -webkit-backdrop-filter: blur(12px);
+
+      transition: all 0.3s ease;
+
+      white-space: nowrap;
+    }
+
+
+    .bottom-navigation a:hover {
+      color: #fff !important;
+
+      background:
+        linear-gradient(
+          135deg,
+          #315a78,
+          #4e7c9b
+        ) !important;
+
+      border-color: transparent !important;
+
+      transform: translateY(-3px);
+
+      box-shadow:
+        0 10px 22px rgba(38, 67, 88, 0.20);
+    }
+
+
+    .bottom-navigation a.active {
+      color: #fff !important;
+
+      background:
+        linear-gradient(
+          135deg,
+          #172b3d,
+          #315a78
+        ) !important;
+
+      border-color: transparent !important;
+
+      box-shadow:
+        0 9px 22px rgba(23, 43, 61, 0.22);
+    }
+
+
+    /* =====================================================
+       MUSIC BUTTON
+       ===================================================== */
+
+    .music-btn {
+      z-index: 9999;
+
+      background:
+        linear-gradient(
+          135deg,
+          #172b3d,
+          #416b89
+        ) !important;
+
+      box-shadow:
+        0 10px 25px rgba(23, 43, 61, 0.25);
+    }
+
+
+    /* =====================================================
+       MOBILE
+       ===================================================== */
+
+    @media (max-width: 768px) {
+
+      .hero {
+        padding-top: 55px !important;
+
+        padding-left: 18px !important;
+
+        padding-right: 18px !important;
+
+        padding-bottom: 25px !important;
+
+        display: flex;
+
+        flex-direction: column;
+      }
+
+
+      .hero-overlay {
+        background:
+          linear-gradient(
+            180deg,
+            rgba(242, 246, 250, 0.92),
+            rgba(222, 234, 244, 0.74)
+          ) !important;
+      }
+
+
+      .hero-content {
+        padding-top: 10px;
+
+        width: 100%;
+      }
+
+
+      .hero-content .script-text {
+        font-size: 21px;
+      }
+
+
+      .hero-content h1 {
+        letter-spacing: -1px;
+
+        margin-top: 5px;
+
+        margin-bottom: 15px;
+      }
+
+
+      .hero-desc {
+        font-size: 15px;
+
+        line-height: 1.7;
+      }
+
+
+      .countdown-card {
+        margin-top: 35px;
+
+        padding:
+          24px
+          15px
+          28px;
+
+        width: 100%;
+
+        border-radius: 26px !important;
+      }
+
+
+      .countdown-card .script-text {
+        font-size: 23px;
+      }
+
+
+      .countdown {
+        gap: 8px;
+      }
+
+
+      .countdown > div {
+        min-width: 48px;
+      }
+
+
+      .countdown strong {
+        font-size: 26px;
+      }
+
+
+      .birthday-photo-frame {
+        width: 210px;
+
+        margin-top: 20px;
+
+        padding:
+          9px
+          9px
+          20px;
+      }
+
+
+      .birthday-photo-frame img {
+        height: 235px;
+      }
+
+
+      .birthday-photo-frame::before {
+        width: 34px;
+
+        height: 34px;
+
+        font-size: 15px;
+      }
+
+
+      .photo-caption {
+        font-size: 20px;
+      }
+
+
+      /* Bottom navigation */
+
+      .bottom-navigation {
+        gap: 7px;
+
+        padding:
+          15px
+          10px
+          25px;
+      }
+
+
+      .bottom-navigation a {
+        font-size: 11px;
+
+        padding:
+          9px
+          13px;
+      }
+
+    }
+
+
+    /* =====================================================
+       VERY SMALL PHONES
+       ===================================================== */
+
+    @media (max-width: 420px) {
+
+      .bottom-navigation {
+        gap: 6px;
+      }
+
+
+      .bottom-navigation a {
+        padding:
+          8px
+          11px;
+
+        font-size: 10px;
+      }
+
+
+      .countdown {
+        gap: 5px;
+      }
+
+
+      .countdown > div {
+        min-width: 42px;
+      }
+
+
+      .countdown strong {
+        font-size: 23px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body style="--hero-image: url('assets/ak.jpeg');">
+
+
+  <!-- =====================================================
+       BACKGROUND
+       ===================================================== -->
+
+  <div class="cursor-glow"></div>
+
+  <div class="floating-bg"></div>
+
+
+
+
+
+  <!-- =====================================================
+       MAIN HERO
+       ===================================================== -->
+
+  <main class="hero page-section">
+
+    <!-- Background Overlay -->
+    <div class="hero-overlay"></div>
+
+
+    <!-- ===================================================
+         LEFT CONTENT
+         =================================================== -->
+
+    <section class="hero-content reveal">
+
+
+      <p class="script-text">
+        a little universe made just for you
+      </p>
+
+
+      <h1>
+        Hey<br />
+        <span>Nancy</span>
+      </h1>
+
+
+      <p class="hero-desc">
+        This little corner of the internet is all about you.
+        A place for your smiles, our memories, and all the
+        little things that make you special. ❤️
+      </p>
+
+
+      <!-- Main Buttons -->
+
+
+    </section>
+
+
+    <!-- ===================================================
+         RIGHT CONTENT
+         COUNTDOWN + PHOTO
+         =================================================== -->
+
+    <aside
+      class="countdown-card glass reveal delay-1"
+    >
+
+
+      <!-- Countdown Title -->
+
+      <p class="script-text">
+        birthday countdown
+      </p>
+
+
+      <!-- =================================================
+           COUNTDOWN
+           ================================================= -->
+
+      <div
+        class="countdown"
+        id="countdown"
+      >
+
+        <div>
+          <strong id="days">00</strong>
+          <span>Days</span>
+        </div>
+
+
+        <div>
+          <strong id="hours">00</strong>
+          <span>Hours</span>
+        </div>
+
+
+        <div>
+          <strong id="mins">00</strong>
+          <span>Mins</span>
+        </div>
+
+
+        <div>
+          <strong id="secs">00</strong>
+          <span>Secs</span>
+        </div>
+
+      </div>
+
+
+      <!-- =================================================
+           POLAROID PHOTO
+           ================================================= -->
+
+      <div class="birthday-photo-frame">
+
+        <img
+          src="assets/front.jpeg"
+          alt="Nandini"
+        />
+
+
+        <p class="photo-caption">
+        </p>
+
+      </div>
+
+
+    </aside>
+
+
+  </main>
+
+
+  <!-- =====================================================
+       BOTTOM NAVIGATION
+       ===================================================== -->
+
+  <nav class="bottom-navigation">
+
+
+    <a
+      href="index.html"
+      class="active"
+    >
+      Home
+    </a>
+
+
+    <a href="memories.html">
+      Memories
+    </a>
+
+
+    <a href="reasons.html">
+      Reasons
+    </a>
+
+
+    <a href="letter.html">
+      Letter
+    </a>
+
+
+
+
+    <a href="final.html">
+      Final
+    </a>
+
+
+  </nav>
+
+
+  <!-- =====================================================
+       JAVASCRIPT
+       ===================================================== -->
+
+  <script src="script.js"></script>
+
+
+</body>
+
+</html>

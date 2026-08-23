@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Memories | Nancy</title>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Dancing+Script:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+
+    /* =====================================================
+       BASIC
+       ===================================================== */
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      min-height: 100%;
+      overflow-x: hidden;
+    }
+
+    body {
+      background:
+        linear-gradient(
+          135deg,
+          #eef4f8,
+          #dce8f1
+        );
+
+      color: #24394a;
+      font-family: "Poppins", sans-serif;
+    }
+
+
+    /* =====================================================
+       PAGE HEADER
+       ===================================================== */
+
+    .sub-hero {
+      position: relative;
+      z-index: 5;
+
+      max-width: 900px;
+      margin: 0 auto;
+
+      padding: 90px 25px 45px;
+
+      text-align: center;
+    }
+
+    .sub-hero .script-text {
+      color: #55758f !important;
+
+      font-family: "Dancing Script", cursive;
+      font-size: 25px;
+
+      margin-bottom: 8px;
+    }
+
+    .sub-hero h1 {
+      margin: 5px 0 12px;
+
+      font-family: "Cormorant Garamond", serif;
+
+      font-size: clamp(55px, 8vw, 90px);
+
+      line-height: 0.95;
+
+      color: #172b3d !important;
+
+      letter-spacing: -2px;
+
+      text-shadow:
+        0 5px 20px rgba(255, 255, 255, 0.75);
+    }
+
+    .sub-hero > p:last-child {
+      color: #526879;
+
+      font-family: "Poppins", sans-serif;
+
+      font-size: 16px;
+
+      line-height: 1.7;
+    }
+
+
+    /* =====================================================
+       MEMORY GRID
+       ===================================================== */
+
+    .masonry {
+      position: relative;
+      z-index: 5;
+
+      width: min(
+        1100px,
+        calc(100% - 40px)
+      );
+
+      margin: 0 auto 50px;
+
+      display: grid;
+
+      grid-template-columns: repeat(3, 1fr);
+
+      gap: 28px;
+
+      align-items: stretch;
+    }
+
+
+    /* =====================================================
+       MEMORY CARD
+       ===================================================== */
+
+    .polaroid {
+      position: relative;
+
+      width: 100%;
+
+      /*
+       * Increased card height.
+       * Content can still make it taller automatically.
+       */
+      min-height: 560px;
+
+      height: auto;
+
+      padding: 0;
+
+      box-sizing: border-box;
+
+      background:
+        linear-gradient(
+          145deg,
+          #ffffff,
+          #edf3f7
+        );
+
+      border:
+        1px solid rgba(255, 255, 255, 0.95);
+
+      border-radius: 16px;
+
+      overflow: hidden;
+
+      box-shadow:
+        0 18px 40px rgba(32, 55, 72, 0.13),
+        0 5px 12px rgba(32, 55, 72, 0.08);
+
+      transition:
+        transform 0.45s ease,
+        box-shadow 0.45s ease;
+    }
+
+    .polaroid:nth-child(1) {
+      transform: rotate(-1.5deg);
+    }
+
+    .polaroid:nth-child(2) {
+      transform: rotate(1.2deg);
+    }
+
+    .polaroid:nth-child(3) {
+      transform: rotate(-0.7deg);
+    }
+
+
+    /* =====================================================
+       HOVER CARD
+       ===================================================== */
+
+    .polaroid:hover {
+      transform:
+        rotate(0deg)
+        translateY(-10px)
+        scale(1.025);
+
+      box-shadow:
+        0 30px 60px rgba(27, 55, 75, 0.23),
+        0 8px 20px rgba(27, 55, 75, 0.12);
+
+      z-index: 20;
+    }
+
+
+    /* =====================================================
+       INITIAL TEXT
+       ===================================================== */
+
+    .memory-intro {
+      position: relative;
+
+      width: 100%;
+
+      min-height: 560px;
+
+      box-sizing: border-box;
+
+      z-index: 5;
+
+      display: flex;
+
+      flex-direction: column;
+
+      align-items: center;
+
+      justify-content: center;
+
+      text-align: center;
+
+      padding: 40px 35px;
+
+      background:
+        linear-gradient(
+          145deg,
+          #f8fbfd,
+          #e3edf4
+        );
+
+      transition:
+        opacity 0.45s ease,
+        transform 0.45s ease;
+    }
+
+
+    .memory-number {
+      font-family:
+        "Cormorant Garamond",
+        serif;
+
+      font-size: 55px;
+
+      color: #557b96;
+
+      line-height: 1;
+
+      margin-bottom: 15px;
+
+      opacity: 0.75;
+    }
+
+
+    .memory-intro h2 {
+      margin: 0 0 16px;
+
+      font-family:
+        "Cormorant Garamond",
+        serif;
+
+      font-size: 32px;
+
+      font-weight: 600;
+
+      color: #172b3d;
+
+      line-height: 1.15;
+    }
+
+
+    .memory-intro p {
+      margin: 0;
+
+      max-width: 270px;
+
+      font-family:
+        "Poppins",
+        sans-serif;
+
+      font-size: 13px;
+
+      line-height: 1.75;
+
+      color: #607687;
+    }
+
+
+    /* =====================================================
+       IMAGE / VIDEO
+       ===================================================== */
+
+    .memory-media {
+      position: absolute;
+
+      inset: 0;
+
+      width: 100%;
+
+      height: 100%;
+
+      opacity: 0;
+
+      transform: scale(1.08);
+
+      transition:
+        opacity 0.55s ease,
+        transform 0.7s ease;
+
+      z-index: 2;
+    }
+
+
+    .memory-media img,
+    .memory-media video {
+      width: 100%;
+
+      height: 100%;
+
+      display: block;
+
+      object-fit: cover;
+    }
+
+
+    /* =====================================================
+       IMAGE OVERLAY
+       ===================================================== */
+
+    .memory-media::after {
+      content: "";
+
+      position: absolute;
+
+      inset: 0;
+
+      background:
+        linear-gradient(
+          180deg,
+          rgba(23, 43, 61, 0.02),
+          rgba(23, 43, 61, 0.30)
+        );
+
+      pointer-events: none;
+    }
+
+
+    /* =====================================================
+       HOVER = REVEAL IMAGE
+       ===================================================== */
+
+    .polaroid:hover .memory-intro {
+      opacity: 0;
+
+      transform:
+        scale(0.95)
+        translateY(-10px);
+
+      pointer-events: none;
+    }
+
+
+    .polaroid:hover .memory-media {
+      opacity: 1;
+
+      transform: scale(1);
+    }
+
+
+    /* =====================================================
+       NO HOVER TEXT
+       ===================================================== */
+
+    .memory-label {
+      display: none !important;
+    }
+
+
+    /* =====================================================
+       BLUE DECORATIVE GLOW
+       ===================================================== */
+
+    .polaroid::before {
+      content: "";
+
+      position: absolute;
+
+      width: 180px;
+      height: 180px;
+
+      top: -100px;
+      right: -100px;
+
+      border-radius: 50%;
+
+      background:
+        rgba(74, 123, 158, 0.20);
+
+      filter: blur(45px);
+
+      opacity: 0;
+
+      z-index: 8;
+
+      pointer-events: none;
+
+      transition:
+        opacity 0.45s ease;
+    }
+
+
+    .polaroid:hover::before {
+      opacity: 1;
+    }
+
+
+    /* =====================================================
+       BOTTOM NAVIGATION
+       ===================================================== */
+
+    .bottom-navigation {
+      position: relative;
+
+      z-index: 100;
+
+      width: 100%;
+
+      display: flex;
+
+      justify-content: center;
+
+      align-items: center;
+
+      flex-wrap: wrap;
+
+      gap: 10px;
+
+      padding: 20px 20px 30px;
+
+      box-sizing: border-box;
+
+      background:
+        linear-gradient(
+          180deg,
+          rgba(245, 248, 251, 0.60),
+          rgba(221, 233, 243, 0.90)
+        );
+
+      border-top:
+        1px solid rgba(255, 255, 255, 0.80);
+
+      box-shadow:
+        0 -10px 30px rgba(38, 67, 88, 0.08);
+    }
+
+
+    .bottom-navigation a {
+      display: inline-flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      text-decoration: none;
+
+      font-family:
+        "Poppins",
+        sans-serif;
+
+      font-size: 13px;
+
+      font-weight: 500;
+
+      color: #35566e;
+
+      background:
+        rgba(255, 255, 255, 0.70);
+
+      border:
+        1px solid rgba(57, 91, 116, 0.16);
+
+      padding: 10px 18px;
+
+      border-radius: 30px;
+
+      box-shadow:
+        0 6px 18px rgba(38, 67, 88, 0.08);
+
+      backdrop-filter: blur(12px);
+
+      -webkit-backdrop-filter: blur(12px);
+
+      transition:
+        all 0.3s ease;
+
+      white-space: nowrap;
+    }
+
+
+    .bottom-navigation a:hover {
+      color: #fff;
+
+      background:
+        linear-gradient(
+          135deg,
+          #315a78,
+          #4e7c9b
+        );
+
+      border-color:
+        transparent;
+
+      transform:
+        translateY(-3px);
+
+      box-shadow:
+        0 10px 22px rgba(38, 67, 88, 0.20);
+    }
+
+
+    .bottom-navigation a.active {
+      color: #fff;
+
+      background:
+        linear-gradient(
+          135deg,
+          #172b3d,
+          #315a78
+        );
+
+      border-color:
+        transparent;
+
+      box-shadow:
+        0 9px 22px rgba(23, 43, 61, 0.22);
+    }
+
+
+    /* =====================================================
+       TABLET
+       ===================================================== */
+
+    @media (max-width: 900px) {
+
+      .masonry {
+        grid-template-columns: repeat(2, 1fr);
+
+        width:
+          min(
+            750px,
+            calc(100% - 35px)
+          );
+
+        gap: 24px;
+      }
+
+
+      .polaroid {
+        min-height: 540px;
+      }
+
+
+      .memory-intro {
+        min-height: 540px;
+      }
+
+    }
+
+
+    /* =====================================================
+       MOBILE
+       ===================================================== */
+
+    @media (max-width: 600px) {
+
+      .sub-hero {
+        padding:
+          60px
+          20px
+          30px;
+      }
+
+
+      .sub-hero .script-text {
+        font-size: 21px;
+      }
+
+
+      .sub-hero h1 {
+        font-size: 58px;
+
+        letter-spacing: -1px;
+      }
+
+
+      .sub-hero > p:last-child {
+        font-size: 14px;
+      }
+
+
+      /*
+       * IMPORTANT:
+       * Three cards will ALWAYS be one below another.
+       */
+
+      .masonry {
+        width:
+          calc(100% - 30px);
+
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+
+        margin-bottom: 40px;
+      }
+
+
+      .polaroid,
+      .polaroid:nth-child(1),
+      .polaroid:nth-child(2),
+      .polaroid:nth-child(3) {
+
+        width: 100%;
+
+        min-height: 500px;
+
+        height: auto;
+
+        transform: rotate(-1deg);
+      }
+
+
+      .polaroid:nth-child(2) {
+        transform: rotate(1deg);
+      }
+
+
+      .polaroid:nth-child(3) {
+        transform: rotate(-1deg);
+      }
+
+
+      .polaroid:hover {
+        transform:
+          rotate(0deg)
+          translateY(-8px)
+          scale(1.015);
+      }
+
+
+      .memory-intro {
+        min-height: 500px;
+
+        padding:
+          40px
+          28px;
+      }
+
+
+      .memory-intro h2 {
+        font-size: 30px;
+      }
+
+
+      .memory-intro p {
+        max-width: 280px;
+
+        font-size: 12px;
+
+        line-height: 1.75;
+      }
+
+
+      .memory-number {
+        font-size: 50px;
+      }
+
+
+      .bottom-navigation {
+        gap: 7px;
+
+        padding:
+          15px
+          10px
+          25px;
+      }
+
+
+      .bottom-navigation a {
+        font-size: 11px;
+
+        padding:
+          9px
+          13px;
+      }
+
+    }
+
+
+    /* =====================================================
+       VERY SMALL PHONE
+       ===================================================== */
+
+    @media (max-width: 400px) {
+
+      .masonry {
+        width:
+          calc(100% - 24px);
+
+        grid-template-columns: 1fr;
+
+        gap: 26px;
+      }
+
+
+      .polaroid,
+      .polaroid:nth-child(1),
+      .polaroid:nth-child(2),
+      .polaroid:nth-child(3) {
+
+        width: 100%;
+
+        min-height: 460px;
+
+        height: auto;
+      }
+
+
+      .memory-intro {
+        min-height: 460px;
+
+        padding: 30px 22px;
+      }
+
+
+      .memory-number {
+        font-size: 48px;
+      }
+
+
+      .memory-intro h2 {
+        font-size: 27px;
+      }
+
+
+      .memory-intro p {
+        font-size: 12px;
+
+        line-height: 1.7;
+      }
+
+
+      .bottom-navigation {
+        gap: 5px;
+      }
+
+
+      .bottom-navigation a {
+        padding:
+          8px
+          10px;
+
+        font-size: 10px;
+      }
+
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+
+  <!-- =====================================================
+       BACKGROUND
+       ===================================================== -->
+
+  <div class="cursor-glow"></div>
+
+  <div class="floating-bg"></div>
+
+
+  <!-- =====================================================
+       HEADER
+       ===================================================== -->
+
+  <header class="sub-hero reveal">
+
+    <p class="script-text">
+      Where our memories live
+    </p>
+
+    <h1>
+      Pieces of Forever
+    </h1>
+
+    <p>
+      The little moments that quietly
+      became my favorite memories.
+    </p>
+
+  </header>
+
+
+  <!-- =====================================================
+       MEMORY CARDS
+       ===================================================== -->
+
+  <section class="masonry">
+
+
+    <!-- ===================================================
+         CARD 1
+         =================================================== -->
+
+    <div class="polaroid reveal">
+
+      <div class="memory-intro">
+
+        <div class="memory-number">
+          01
+        </div>
+
+        <h2>
+          The First Picture
+        </h2>
+
+        <p>
+          The first time we met was on December 25th.
+
+          <br><br>
+
+          Few months before that, I had randomly messaged a girl on Instagram asking for a follow-for-follow.
+
+          Little did I know that, months later, that same girl would show up in front of me on her white Activa.
+
+          <br><br>
+
+          And somehow, that girl went from being a random Instagram connection to someone who would make a permanent place in my heart.
+
+          <br><br>
+
+          Here’s one of the first photos from the beautiful journey we started together.
+        </p>
+
+      </div>
+
+
+      <div class="memory-media">
+
+        <img
+          src="assets/1.jpg"
+          alt="Memory"
+        />
+
+      </div>
+
+    </div>
+
+
+    <!-- ===================================================
+         CARD 2
+         =================================================== -->
+
+    <div class="polaroid reveal delay-1">
+
+      <div class="memory-intro">
+
+        <div class="memory-number">
+          02
+        </div>
+
+        <h2>
+          A Trip to Remember
+        </h2>
+
+        <p>
+          My second-ever trip with my crush — and honestly, I can’t even explain how much I enjoyed it.
+
+          <br><br>
+
+          I’m the kind of person who is perfectly happy with just a few close friends.
+
+          I don’t usually feel comfortable around completely new people.
+
+          But that trip was different.
+
+          I went with a bunch of people I barely knew, simply because I wanted to spend more time with her.
+
+          <br><br>
+
+          And somewhere along the way, I clicked my favourite photo of her.
+
+          <br><br>
+
+          She absolutely hates that photo… but bhaiiii, look at her! She looks so damn cute in it, doesn’t she? ❤️
+
+          <br><br>
+
+          Looking back, I think the best part of that trip wasn’t the place, the people, or even the journey — it was getting to spend those moments with her.
+        </p>
+
+      </div>
+
+
+      <div class="memory-media">
+
+        <video
+          autoplay
+          muted
+          loop
+          playsinline
+        >
+
+          <source
+            src="assets/birth.mp4"
+            type="video/mp4"
+          />
+
+        </video>
+
+      </div>
+
+    </div>
+
+
+    <!-- ===================================================
+         CARD 3
+         =================================================== -->
+
+    <div class="polaroid reveal delay-2">
+
+      <div class="memory-intro">
+
+        <div class="memory-number">
+          03
+        </div>
+
+        <h2>
+          The Day We Met Again
+        </h2>
+
+        <p>
+          We had a fight once, and after that, we completely stopped texting each other.
+
+          <br><br>
+
+          But somehow, some kind of miracle happened — thanks, Piyush bhai — and we slowly started talking again.
+
+          At first, it was just a little here and there, but eventually, things started feeling normal again.
+
+          <br><br>
+
+          Then she went on a trip, and when she came back, she came to Delhi before leaving for Jaipur and called me to meet her.
+
+          <br><br>
+
+          Honestly, I didn’t want to go at first.
+
+          I was scared and kept wondering, “Why am I doing this?”
+
+          But you know how it is… dil nahi maanta na.
+
+          <br><br>
+
+          So I went.
+
+          <br><br>
+
+          That day, I brought her flowers for the first time.
+
+          And man… she looked so beautiful.
+
+          For a moment, it honestly felt like I was dreaming.
+
+          <br><br>
+
+          We only met for about 30–40 minutes, and we didn’t really get to spend all that time together because she was with her friends.
+
+          But even those few minutes meant a lot to me.
+
+          <br><br>
+
+          And of course, we clicked a picture together.
+
+          <br><br>
+
+          I’ll be honest — I looked terrible in that picture 😂, but she looked gorgeous as always.
+
+          <br><br>
+
+          Maybe that’s what made the picture special anyway.
+        </p>
+
+      </div>
+
+
+      <div class="memory-media">
+
+        <img
+          src="assets/ak.jpeg"
+          alt="Akanksha"
+        />
+
+      </div>
+
+    </div>
+
+
+  </section>
+
+
+  <!-- =====================================================
+       BOTTOM NAVIGATION
+       ===================================================== -->
+
+  <nav class="bottom-navigation">
+
+    <a href="index.html">
+      Home
+    </a>
+
+    <a
+      href="memories.html"
+      class="active"
+    >
+      Memories
+    </a>
+
+    <a href="reasons.html">
+      Reasons
+    </a>
+
+    <a href="letter.html">
+      Letter
+    </a>
+
+    <a href="final.html">
+      Final
+    </a>
+
+  </nav>
+
+
+  <!-- =====================================================
+       SCRIPT
+       ===================================================== -->
+
+  <script src="script.js"></script>
+
+</body>
+</html>

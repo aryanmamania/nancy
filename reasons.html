@@ -1,0 +1,1918 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Reasons | Akanksha</title>
+
+
+  <!-- =====================================================
+       GOOGLE FONTS
+       ===================================================== -->
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Dancing+Script:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link
+    rel="stylesheet"
+    href="style.css"
+  >
+
+
+  <!-- =====================================================
+       PAGE CSS
+       ===================================================== -->
+
+  <style>
+
+    /* =====================================================
+       RESET
+       ===================================================== */
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
+
+    body {
+
+      margin: 0;
+      padding: 0;
+
+      min-height: 100vh;
+
+      overflow-x: hidden;
+
+      color: #20394d;
+
+      font-family:
+        "Poppins",
+        sans-serif;
+
+      background:
+
+        radial-gradient(
+          circle at 10% 10%,
+          rgba(255,255,255,.95),
+          transparent 28%
+        ),
+
+        radial-gradient(
+          circle at 90% 80%,
+          rgba(103,143,169,.14),
+          transparent 32%
+        ),
+
+        linear-gradient(
+          135deg,
+          #eef5f9 0%,
+          #dce9f2 50%,
+          #edf5f9 100%
+        );
+    }
+
+
+    /* =====================================================
+       HEADER
+       ===================================================== */
+
+    .sub-hero {
+
+      position: relative;
+
+      z-index: 2;
+
+      width:
+        min(
+          950px,
+          calc(100% - 40px)
+        );
+
+      margin: 0 auto;
+
+      padding:
+        65px
+        20px
+        45px;
+
+      text-align: center;
+    }
+
+
+    .sub-hero .script-text {
+
+      margin:
+        0 0 10px;
+
+      color:
+        #557c96 !important;
+
+      font-family:
+        "Dancing Script",
+        cursive;
+
+      font-size:
+        25px;
+
+      line-height:
+        1.3;
+    }
+
+
+    .sub-hero h1 {
+
+      width: 100%;
+
+      margin:
+        0 auto 18px;
+
+      font-family:
+        "Cormorant Garamond",
+        serif;
+
+      font-size:
+        clamp(
+          52px,
+          7vw,
+          88px
+        );
+
+      font-weight:
+        600;
+
+      line-height:
+        1;
+
+      letter-spacing:
+        -1.5px;
+
+      color:
+        #172f43 !important;
+
+      text-shadow:
+        0 5px 20px
+        rgba(255,255,255,.75);
+    }
+
+
+    .sub-hero > p:last-child {
+
+      width:
+        min(
+          760px,
+          100%
+        );
+
+      margin:
+        0 auto;
+
+      color:
+        #587184;
+
+      font-family:
+        "Poppins",
+        sans-serif;
+
+      font-size:
+        14px;
+
+      line-height:
+        1.8;
+    }
+
+
+    /* =====================================================
+       REASON GRID
+       ===================================================== */
+
+    .reason-grid {
+
+      position: relative;
+
+      z-index: 2;
+
+      width:
+        min(
+          1100px,
+          calc(100% - 40px)
+        );
+
+      margin:
+        5px auto 65px;
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(4, 1fr);
+
+      gap:
+        18px;
+    }
+
+
+    /* =====================================================
+       CARD
+       ===================================================== */
+
+    .reason-card {
+
+      position: relative;
+
+      width: 100%;
+
+      height: 255px;
+
+      perspective:
+        1200px;
+
+      cursor:
+        pointer;
+    }
+
+
+    .reason-card-inner {
+
+      position: relative;
+
+      width: 100%;
+
+      height: 100%;
+
+      transform-style:
+        preserve-3d;
+
+      transition:
+        transform .75s
+        cubic-bezier(
+          .4,
+          .2,
+          .2,
+          1
+        );
+    }
+
+
+    .reason-card.open
+    .reason-card-inner {
+
+      transform:
+        rotateY(180deg);
+    }
+
+
+    /* =====================================================
+       FRONT + BACK
+       ===================================================== */
+
+    .reason-front,
+    .reason-back {
+
+      position: absolute;
+
+      inset: 0;
+
+      width: 100%;
+
+      height: 100%;
+
+      overflow: hidden;
+
+      border-radius:
+        18px;
+
+      backface-visibility:
+        hidden;
+
+      -webkit-backface-visibility:
+        hidden;
+    }
+
+
+    /* =====================================================
+       FRONT
+       ===================================================== */
+
+    .reason-front {
+
+      display: flex;
+
+      flex-direction:
+        column;
+
+      align-items:
+        center;
+
+      justify-content:
+        center;
+
+      padding:
+        22px;
+
+      text-align:
+        center;
+
+      background:
+
+        linear-gradient(
+          145deg,
+          rgba(255,255,255,.94),
+          rgba(222,235,244,.82)
+        );
+
+      border:
+        1px solid
+        rgba(255,255,255,.95);
+
+      box-shadow:
+        0 12px 30px
+        rgba(32,55,72,.10);
+
+      transition:
+        transform .35s ease,
+        box-shadow .35s ease;
+    }
+
+
+    .reason-card:not(.locked):hover
+    .reason-front {
+
+      transform:
+        translateY(-6px);
+
+      box-shadow:
+        0 20px 40px
+        rgba(32,55,72,.17);
+    }
+
+
+    /* =====================================================
+       NUMBER
+       ===================================================== */
+
+    .reason-number {
+
+      margin-bottom:
+        9px;
+
+      font-family:
+        "Cormorant Garamond",
+        serif;
+
+      font-size:
+        48px;
+
+      line-height:
+        1;
+
+      color:
+        #557b96;
+
+      opacity:
+        .88;
+    }
+
+
+    /* =====================================================
+       CARD TITLE
+       ===================================================== */
+
+    .reason-front h3 {
+
+      margin:
+        0 0 8px;
+
+      font-family:
+        "Cormorant Garamond",
+        serif;
+
+      font-size:
+        25px;
+
+      line-height:
+        1.1;
+
+      font-weight:
+        600;
+
+      color:
+        #172f43;
+    }
+
+
+    /* =====================================================
+       CARD DESCRIPTION
+       ===================================================== */
+
+    .reason-front p {
+
+      max-width:
+        220px;
+
+      margin:
+        0;
+
+      color:
+        #617889;
+
+      font-size:
+        11px;
+
+      line-height:
+        1.6;
+    }
+
+
+    /* =====================================================
+       TAP TEXT
+       ===================================================== */
+
+    .tap-text {
+
+      margin-top:
+        13px;
+
+      color:
+        #6b879b;
+
+      font-size:
+        9px;
+
+      text-transform:
+        uppercase;
+
+      letter-spacing:
+        1.5px;
+    }
+
+
+    /* =====================================================
+       TODAY CARD
+       ===================================================== */
+
+    .reason-card.today
+    .reason-front {
+
+      border:
+        1px solid
+        rgba(58,101,132,.35);
+
+      box-shadow:
+        0 15px 35px
+        rgba(49,90,120,.18);
+    }
+
+
+    .today-label {
+
+      margin-top:
+        8px;
+
+      color:
+        #315a78;
+
+      font-size:
+        9px;
+
+      font-weight:
+        600;
+
+      text-transform:
+        uppercase;
+
+      letter-spacing:
+        1.4px;
+    }
+
+
+    /* =====================================================
+       LOCKED
+       ===================================================== */
+
+    .reason-card.locked {
+
+      cursor:
+        not-allowed;
+    }
+
+
+    .reason-card.locked
+    .reason-front {
+
+      background:
+
+        linear-gradient(
+          145deg,
+          rgba(218,228,236,.80),
+          rgba(196,211,221,.70)
+        );
+
+      box-shadow:
+        0 8px 20px
+        rgba(32,55,72,.07);
+    }
+
+
+    .reason-card.locked
+    .reason-number {
+
+      color:
+        #8298a8;
+    }
+
+
+    .lock-icon {
+
+      margin-bottom:
+        5px;
+
+      font-size:
+        18px;
+
+      opacity:
+        .65;
+    }
+
+
+    .locked-label {
+
+      margin-top:
+        11px;
+
+      color:
+        #718696;
+
+      font-size:
+        9px;
+
+      text-transform:
+        uppercase;
+
+      letter-spacing:
+        1px;
+    }
+
+
+    /* =====================================================
+       BACK
+       ===================================================== */
+
+    .reason-back {
+
+      position:
+        relative;
+
+      display:
+        flex;
+
+      align-items:
+        center;
+
+      justify-content:
+        center;
+
+      padding:
+        25px;
+
+      text-align:
+        center;
+
+      background:
+        #172f43;
+
+      color:
+        white;
+
+      transform:
+        rotateY(180deg);
+
+      box-shadow:
+        0 20px 45px
+        rgba(23,43,61,.28);
+    }
+
+
+    /* =====================================================
+       PHOTO
+       ===================================================== */
+
+    .reason-photo {
+
+      position:
+        absolute;
+
+      inset:
+        0;
+
+      width:
+        100%;
+
+      height:
+        100%;
+
+      object-fit:
+        cover;
+
+      z-index:
+        0;
+
+      transition:
+        transform .8s ease;
+    }
+
+
+    .reason-card.open
+    .reason-photo {
+
+      transform:
+        scale(1.06);
+    }
+
+
+    /* =====================================================
+       PHOTO OVERLAY
+       ===================================================== */
+
+    .reason-photo-overlay {
+
+      position:
+        absolute;
+
+      inset:
+        0;
+
+      z-index:
+        1;
+
+      background:
+
+        linear-gradient(
+          180deg,
+          rgba(10,28,42,.28),
+          rgba(10,28,42,.90)
+        );
+    }
+
+
+    /* =====================================================
+       REASON CONTENT
+       ===================================================== */
+
+    .reason-content {
+
+      position:
+        relative;
+
+      z-index:
+        3;
+
+      width:
+        100%;
+
+      display:
+        flex;
+
+      flex-direction:
+        column;
+
+      align-items:
+        center;
+
+      justify-content:
+        center;
+    }
+
+
+    .back-number {
+
+      margin-bottom:
+        10px;
+
+      font-family:
+        "Cormorant Garamond",
+        serif;
+
+      font-size:
+        20px;
+
+      color:
+        rgba(255,255,255,.78);
+    }
+
+
+    .reason-text {
+
+      max-width:
+        240px;
+
+      font-family:
+        "Dancing Script",
+        cursive;
+
+      font-size:
+        24px;
+
+      line-height:
+        1.3;
+
+      color:
+        #fff;
+
+      text-shadow:
+        0 2px 10px
+        rgba(0,0,0,.35);
+    }
+
+
+    .small-heart {
+
+      margin-top:
+        13px;
+
+      font-size:
+        14px;
+
+      color:
+        rgba(255,255,255,.88);
+    }
+
+
+    /* =====================================================
+       BIRTHDAY LINK
+       ===================================================== */
+
+    .birthday-link {
+
+      position:
+        relative;
+
+      z-index:
+        10;
+
+      display:
+        inline-flex;
+
+      align-items:
+        center;
+
+      justify-content:
+        center;
+
+      margin-top:
+        13px;
+
+      padding:
+        9px 16px;
+
+      border-radius:
+        25px;
+
+      text-decoration:
+        none;
+
+      color:
+        #172f43;
+
+      background:
+        rgba(255,255,255,.95);
+
+      border:
+        1px solid
+        rgba(255,255,255,.75);
+
+      font-size:
+        10px;
+
+      font-weight:
+        600;
+
+      box-shadow:
+        0 6px 18px
+        rgba(0,0,0,.15);
+
+      transition:
+        all .3s ease;
+    }
+
+
+    .birthday-link:hover {
+
+      color:
+        white;
+
+      background:
+
+        linear-gradient(
+          135deg,
+          #315a78,
+          #557f9e
+        );
+
+      transform:
+        translateY(-3px);
+
+      box-shadow:
+        0 10px 22px
+        rgba(0,0,0,.22);
+    }
+
+
+    /* =====================================================
+       BOTTOM NAVIGATION
+       ===================================================== */
+
+    .bottom-navigation {
+
+      position:
+        relative;
+
+      z-index:
+        20;
+
+      width:
+        100%;
+
+      display:
+        flex;
+
+      justify-content:
+        center;
+
+      align-items:
+        center;
+
+      flex-wrap:
+        wrap;
+
+      gap:
+        10px;
+
+      padding:
+        20px
+        20px
+        30px;
+
+      background:
+
+        linear-gradient(
+          180deg,
+          rgba(245,248,251,.65),
+          rgba(221,233,243,.95)
+        );
+
+      border-top:
+        1px solid
+        rgba(255,255,255,.8);
+
+      box-shadow:
+        0 -10px 30px
+        rgba(38,67,88,.08);
+    }
+
+
+    .bottom-navigation a {
+
+      display:
+        inline-flex;
+
+      align-items:
+        center;
+
+      justify-content:
+        center;
+
+      padding:
+        10px 18px;
+
+      border-radius:
+        30px;
+
+      text-decoration:
+        none;
+
+      font-size:
+        13px;
+
+      font-weight:
+        500;
+
+      color:
+        #35566e;
+
+      background:
+        rgba(255,255,255,.72);
+
+      border:
+        1px solid
+        rgba(57,91,116,.16);
+
+      box-shadow:
+        0 6px 18px
+        rgba(38,67,88,.08);
+
+      backdrop-filter:
+        blur(12px);
+
+      transition:
+        all .3s ease;
+    }
+
+
+    .bottom-navigation a:hover {
+
+      color:
+        white;
+
+      background:
+
+        linear-gradient(
+          135deg,
+          #315a78,
+          #4e7c9b
+        );
+
+      border-color:
+        transparent;
+
+      transform:
+        translateY(-3px);
+
+      box-shadow:
+        0 10px 22px
+        rgba(38,67,88,.20);
+    }
+
+
+    .bottom-navigation a.active {
+
+      color:
+        white;
+
+      background:
+
+        linear-gradient(
+          135deg,
+          #172f43,
+          #315a78
+        );
+
+      border-color:
+        transparent;
+
+      box-shadow:
+        0 9px 22px
+        rgba(23,43,61,.22);
+    }
+
+
+    /* =====================================================
+       MUSIC BUTTON
+       ===================================================== */
+
+    .music-btn {
+
+      background:
+
+        linear-gradient(
+          135deg,
+          #172f43,
+          #416b89
+        ) !important;
+
+      box-shadow:
+        0 10px 25px
+        rgba(23,43,61,.25);
+
+      z-index:
+        9999;
+    }
+
+
+    /* =====================================================
+       TABLET
+       ===================================================== */
+
+    @media (max-width: 950px) {
+
+      .reason-grid {
+
+        grid-template-columns:
+          repeat(3, 1fr);
+      }
+
+
+      .reason-card {
+
+        height:
+          245px;
+      }
+
+    }
+
+
+    /* =====================================================
+       MOBILE
+       ===================================================== */
+
+    @media (max-width: 700px) {
+
+      .sub-hero {
+
+        width:
+          calc(100% - 30px);
+
+        padding:
+          45px 15px 30px;
+      }
+
+
+      .sub-hero .script-text {
+
+        font-size:
+          21px;
+      }
+
+
+      .sub-hero h1 {
+
+        font-size:
+          48px;
+
+        line-height:
+          1.05;
+
+        letter-spacing:
+          -.5px;
+      }
+
+
+      .sub-hero > p:last-child {
+
+        width:
+          100%;
+
+        font-size:
+          12px;
+
+        line-height:
+          1.75;
+
+        padding:
+          0 5px;
+      }
+
+
+      .reason-grid {
+
+        width:
+          calc(100% - 30px);
+
+        grid-template-columns:
+          repeat(2, 1fr);
+
+        gap:
+          14px;
+
+        margin-bottom:
+          40px;
+      }
+
+
+      .reason-card {
+
+        height:
+          220px;
+      }
+
+
+      .reason-front {
+
+        padding:
+          15px;
+      }
+
+
+      .reason-number {
+
+        font-size:
+          40px;
+      }
+
+
+      .reason-front h3 {
+
+        font-size:
+          20px;
+      }
+
+
+      .reason-front p {
+
+        font-size:
+          9px;
+
+        line-height:
+          1.5;
+      }
+
+
+      .tap-text {
+
+        font-size:
+          8px;
+
+        margin-top:
+          10px;
+      }
+
+
+      .reason-back {
+
+        padding:
+          14px;
+      }
+
+
+      .reason-text {
+
+        font-size:
+          20px;
+
+        max-width:
+          165px;
+      }
+
+
+      .birthday-link {
+
+        padding:
+          8px 11px;
+
+        font-size:
+          8px;
+      }
+
+
+      .bottom-navigation {
+
+        gap:
+          7px;
+
+        padding:
+          15px 10px 25px;
+      }
+
+
+      .bottom-navigation a {
+
+        font-size:
+          10px;
+
+        padding:
+          9px 12px;
+      }
+
+    }
+
+
+    /* =====================================================
+       SMALL PHONE
+       ===================================================== */
+
+    @media (max-width: 400px) {
+
+      .sub-hero {
+
+        padding-top:
+          35px;
+      }
+
+
+      .sub-hero .script-text {
+
+        font-size:
+          19px;
+      }
+
+
+      .sub-hero h1 {
+
+        font-size:
+          40px;
+
+        line-height:
+          1.08;
+      }
+
+
+      .sub-hero > p:last-child {
+
+        font-size:
+          11px;
+      }
+
+
+      .reason-grid {
+
+        gap:
+          10px;
+      }
+
+
+      .reason-card {
+
+        height:
+          205px;
+      }
+
+
+      .reason-front h3 {
+
+        font-size:
+          18px;
+      }
+
+
+      .reason-front p {
+
+        font-size:
+          8px;
+      }
+
+
+      .reason-text {
+
+        font-size:
+          18px;
+
+        max-width:
+          145px;
+      }
+
+
+      .birthday-link {
+
+        font-size:
+          7px;
+
+        padding:
+          7px 9px;
+      }
+
+
+      .bottom-navigation {
+
+        gap:
+          5px;
+      }
+
+
+      .bottom-navigation a {
+
+        padding:
+          8px 9px;
+
+        font-size:
+          9px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+  <!-- =====================================================
+       EXISTING BACKGROUND
+       ===================================================== -->
+
+  <div class="cursor-glow"></div>
+
+  <div class="floating-bg"></div>
+
+
+  <!-- =====================================================
+       MUSIC BUTTON
+       ===================================================== -->
+
+  <button
+    class="music-btn"
+    id="musicBtn"
+  >
+    ♪
+  </button>
+
+
+  <!-- =====================================================
+       HEADER
+       ===================================================== -->
+
+  <header class="sub-hero reveal">
+
+    <p class="script-text">
+      little reasons, endless feelings
+    </p>
+
+
+    <h1>
+      Why I Love You
+      <span>or Why You're the Best</span>
+    </h1>
+
+
+    <p>
+      One little reason will be waiting for you each day.
+      Don't forget to open one every day —
+      there's a surprise waiting at the end.
+    </p>
+
+  </header>
+
+
+  <!-- =====================================================
+       REASON GRID
+       ===================================================== -->
+
+  <section
+    class="reason-grid"
+    id="reasonGrid"
+  ></section>
+
+
+  <!-- =====================================================
+       BOTTOM NAVIGATION
+       ===================================================== -->
+
+  <nav class="bottom-navigation">
+
+    <a href="index.html">
+      Home
+    </a>
+
+    <a href="memories.html">
+      Memories
+    </a>
+
+    <a
+      href="reasons.html"
+      class="active"
+    >
+      Reasons
+    </a>
+
+    <a href="letter.html">
+      Letter
+    </a>
+
+
+
+    <a href="final.html">
+      Final
+    </a>
+
+  </nav>
+
+
+  <!-- =====================================================
+       DAILY REASONS
+       ===================================================== -->
+
+  <script>
+
+    /* =====================================================
+       64 REASONS
+       ===================================================== */
+
+    const reasons = [
+
+      "You are always so full of energy and always ready to help anyone in need.",
+
+      "Your smile... and those cute dimples — damn, they’re just so pretty.",
+
+      "You bring a little magic wherever you go.",
+
+      "You are effortlessly, beautifully yourself.",
+
+      "You make me laugh when I least expect it.",
+
+      "You have a way of making everything feel okay.",
+
+      "Your happiness genuinely makes me happy.",
+
+      "You make even silence feel comfortable.",
+
+      "You turn little moments into favorite memories.",
+
+      "You have the sweetest kind of chaos.",
+
+      "You somehow make boring things fun.",
+
+      "Your presence feels like home.",
+
+      "You make me want to be a better person.",
+
+      "You care in ways that people don't always notice.",
+
+      "You have a heart that is impossible not to love.",
+
+      "You make every conversation worth remembering.",
+
+      "You make random moments feel special.",
+
+      "Your laugh is one of my favorite sounds.",
+
+      "You have a beautiful way of seeing the world.",
+
+      "You make happiness feel effortless.",
+
+      "You are the kind of person worth keeping forever.",
+
+      "You make every memory a little brighter.",
+
+      "You understand more than you say.",
+
+      "You make even the smallest things meaningful.",
+
+      "You have a warmth that people remember.",
+
+      "You make being around you feel easy.",
+
+      "You somehow make every place feel better.",
+
+      "You are wonderfully unpredictable.",
+
+      "You make me smile without even trying.",
+
+      "You are one of those rare people who just feels different.",
+
+      "You make ordinary conversations unforgettable.",
+
+      "You have a beautiful energy that stays with me.",
+
+      "You make life feel a little lighter.",
+
+      "You make every silly moment worth remembering.",
+
+      "You are beautiful in ways that have nothing to do with looks.",
+
+      "You make happiness feel contagious.",
+
+      "You have a way of making people feel important.",
+
+      "You make even quiet moments special.",
+
+      "You bring out the softest parts of me.",
+
+      "You are someone I can never get tired of.",
+
+      "You make memories without even realizing it.",
+
+      "You make every little adventure better.",
+
+      "You have a smile I could recognize anywhere.",
+
+      "You make my favorite moments even more favorite.",
+
+      "You are impossible to replace.",
+
+      "You make life more colorful.",
+
+      "You have a beautiful soul.",
+
+      "You make me look forward to tomorrow.",
+
+      "You are my favorite kind of distraction.",
+
+      "You make every day have something to look forward to.",
+
+      "You are comforting without even trying.",
+
+      "You make the simplest moments feel special.",
+
+      "You are a beautiful collection of little things.",
+
+      "You make my world feel warmer.",
+
+      "You are the reason behind so many random smiles.",
+
+      "You make every memory worth keeping.",
+
+      "You are someone I would choose again and again.",
+
+      "You make life feel like a story worth remembering.",
+
+      "You have a way of making everything more beautiful.",
+
+      "You are my favorite person to make memories with.",
+
+      "You make the ordinary feel like something worth celebrating.",
+
+      "You are one of the best things life quietly gave me.",
+
+      "You make every chapter a little more beautiful.",
+
+      "And after all these reasons, I still haven't run out of reasons to love you."
+
+    ];
+
+
+    /* =====================================================
+       START DATE
+
+       Day 1  = 23 August 2026
+       Day 2  = 24 August 2026
+       ...
+       Day 64 = 25 October 2026
+       ===================================================== */
+
+    const startDate =
+      new Date(
+        "2026-08-23T00:00:00"
+      );
+
+
+    /* =====================================================
+       GET AVAILABLE CARD COUNT
+       ===================================================== */
+
+    function getAvailableReasonCount() {
+
+      const today =
+        new Date();
+
+
+      today.setHours(
+        0,
+        0,
+        0,
+        0
+      );
+
+
+      const start =
+        new Date(
+          startDate
+        );
+
+
+      start.setHours(
+        0,
+        0,
+        0,
+        0
+      );
+
+
+      const difference =
+        today.getTime() -
+        start.getTime();
+
+
+      const dayNumber =
+        Math.floor(
+          difference /
+          (
+            1000 *
+            60 *
+            60 *
+            24
+          )
+        );
+
+
+      return Math.min(
+        Math.max(
+          dayNumber + 1,
+          0
+        ),
+        reasons.length
+      );
+
+    }
+
+
+    /* =====================================================
+       CREATE CARDS
+       ===================================================== */
+
+    function createReasonCards() {
+
+      const grid =
+        document.getElementById(
+          "reasonGrid"
+        );
+
+
+      const available =
+        getAvailableReasonCount();
+
+
+      grid.innerHTML = "";
+
+
+      reasons.forEach(
+        (reason, index) => {
+
+          const cardNumber =
+            index + 1;
+
+
+          const isAvailable =
+            cardNumber <= available;
+
+
+          const card =
+            document.createElement(
+              "div"
+            );
+
+
+          card.className =
+            "reason-card";
+
+
+          if (!isAvailable) {
+
+            card.classList.add(
+              "locked"
+            );
+
+          }
+
+
+          if (
+            cardNumber === available
+          ) {
+
+            card.classList.add(
+              "today"
+            );
+
+          }
+
+
+          const photoNumber =
+            String(
+              cardNumber
+            ).padStart(
+              2,
+              "0"
+            );
+
+
+          const photoPath =
+            `assets/reasons/${photoNumber}.jpeg`;
+
+
+          /* =================================================
+             AVAILABLE CARD
+             ================================================= */
+
+          if (isAvailable) {
+
+            card.innerHTML = `
+
+              <div
+                class="reason-card-inner"
+              >
+
+
+                <!-- FRONT -->
+
+                <div
+                  class="reason-front"
+                >
+
+                  <div
+                    class="reason-number"
+                  >
+                    ${photoNumber}
+                  </div>
+
+
+                  <h3>
+                    A Little Reason
+                  </h3>
+
+
+                  <p>
+                    There is something special
+                    waiting behind this card.
+                  </p>
+
+
+                  <div
+                    class="tap-text"
+                  >
+                    Tap to reveal
+                  </div>
+
+
+                  ${
+                    cardNumber === available
+                    ? `
+                      <div
+                        class="today-label"
+                      >
+                        Today's reason
+                      </div>
+                    `
+                    : ""
+                  }
+
+                </div>
+
+
+                <!-- BACK -->
+
+                <div
+                  class="reason-back"
+                >
+
+                  <img
+                    class="reason-photo"
+                    src="${photoPath}"
+                    alt="Reason ${photoNumber}"
+                  >
+
+
+                  <div
+                    class="reason-photo-overlay"
+                  ></div>
+
+
+                  <div
+                    class="reason-content"
+                  >
+
+                    <div
+                      class="back-number"
+                    >
+                      Reason ${photoNumber}
+                    </div>
+
+
+                    <div
+                      class="reason-text"
+                    >
+                      ${reason}
+                    </div>
+
+
+                    <div
+                      class="small-heart"
+                    >
+                      ✦
+                    </div>
+
+
+                    ${
+                      cardNumber === 64
+                      ? `
+                        <a
+                          href="birthday.html"
+                          class="birthday-link"
+                          onclick="
+                            event.stopPropagation();
+                          "
+                        >
+                          Continue to Birthday →
+                        </a>
+                      `
+                      : ""
+                    }
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            `;
+
+
+            /* ===============================================
+               CARD CLICK
+               =============================================== */
+
+            card.addEventListener(
+              "click",
+              function () {
+
+                card.classList.toggle(
+                  "open"
+                );
+
+              }
+            );
+
+          }
+
+
+          /* =================================================
+             LOCKED CARD
+             ================================================= */
+
+          else {
+
+            card.innerHTML = `
+
+              <div
+                class="reason-card-inner"
+              >
+
+                <div
+                  class="reason-front"
+                >
+
+                  <div
+                    class="lock-icon"
+                  >
+                    🔒
+                  </div>
+
+
+                  <div
+                    class="reason-number"
+                  >
+                    ${photoNumber}
+                  </div>
+
+
+                  <h3>
+                    Not Yet
+                  </h3>
+
+
+                  <p>
+                    Come back another day
+                    for this one.
+                  </p>
+
+
+                  <div
+                    class="locked-label"
+                  >
+                    Locked
+                  </div>
+
+                </div>
+
+
+                <div
+                  class="reason-back"
+                ></div>
+
+              </div>
+
+            `;
+
+          }
+
+
+          grid.appendChild(
+            card
+          );
+
+        }
+      );
+
+    }
+
+
+    /* =====================================================
+       INITIALIZE
+       ===================================================== */
+
+    createReasonCards();
+
+  </script>
+
+
+  <!-- =====================================================
+       EXISTING WEBSITE SCRIPT
+       ===================================================== -->
+
+  <script src="script.js"></script>
+
+
+</body>
+
+</html>
